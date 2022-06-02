@@ -10,7 +10,7 @@ class AutorService {
     var body = json.encode(autorModel.toRegistry());
     var apiResponse = ApiResponse(menssage: '', object: '', statusResponse: 0);
 
-    String baseUrl = 'http://192.168.0.7:8081';
+    String baseUrl = 'http://192.168.10.27:8081';
     var res = await http.post('$baseUrl/api/biblioteca/autor/crearAutor',
         headers: {
           HttpHeaders.contentTypeHeader: 'application/json',
@@ -28,7 +28,7 @@ class AutorService {
 
   @override
   Future<List<AutorModel>> getAutor() async {
-    String baseUrl = 'http://192.168.0.7:8081';
+    String baseUrl = 'http://192.168.10.27:8081';
     final List collection;
 
     var response =

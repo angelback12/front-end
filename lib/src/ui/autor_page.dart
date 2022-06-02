@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:licor/src/bloc/autor_bloc.dart';
 import 'package:licor/src/models/autor_model.dart';
 import 'package:licor/src/repository/repository.dart';
-import 'package:licor/src/ui/user_select_page.dart';
+import 'package:licor/src/ui/autor_select_page.dart';
 
 import 'menu_page.dart';
 
@@ -21,9 +21,9 @@ class AutorFormState extends State<AutorPage> {
   TextEditingController nameController = new TextEditingController();
   TextEditingController nationController = new TextEditingController();
   TextEditingController numlibController = new TextEditingController();
-
   AutorBloc autorBloc = new AutorBloc();
   Repository repository = new Repository();
+
   @override
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey created above.
@@ -51,7 +51,7 @@ class AutorFormState extends State<AutorPage> {
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Autor',
-                    hintText: 'Nombre de Autor'),
+                    hintText: 'Nombre del Autor'),
               ),
             ),
             Padding(
@@ -74,8 +74,8 @@ class AutorFormState extends State<AutorPage> {
                 controller: numlibController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Libros',
-                    hintText: 'Numero de libros del Autor'),
+                    labelText: 'Libros Escritos',
+                    hintText: 'Numero de Libros Escritos'),
               ),
             ),
             FlatButton(
@@ -97,8 +97,8 @@ class AutorFormState extends State<AutorPage> {
                   try {
                     AutorModel autorModel = new AutorModel(
                         name: nameController.text,
-                        nation: nationController.text
-                        numlib: 50);
+                        nation: nationController.text,
+                        numlib: int.parse(numlibController.text));
                     autorBloc.insertAutor(autorModel);
                   } on FormatException catch (e) {
                     print(e);

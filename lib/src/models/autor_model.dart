@@ -31,5 +31,5 @@ class AutorModel {
       {'name': name, 'nation': nation, 'numlib': numlib};
 
   Map<String, dynamic> toRegistry() =>
-      {'name': name, 'description': nation, 'numlib': numlib};
+      {'name': name, 'ciudad': nation, 'numlib': numlib};
 }

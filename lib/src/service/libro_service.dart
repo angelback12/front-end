@@ -11,7 +11,7 @@ class LibroService {
     var body = json.encode(libroModel.toRegistry());
     var apiResponse = ApiResponse(menssage: '', object: '', statusResponse: 0);
 
-    String baseUrl = 'http://192.168.20.20:8081';
+    String baseUrl = 'http://192.168.10.27:8081';
     var res = await http.post('$baseUrl/api/biblioteca/libro/crearLibro',
         headers: {
           HttpHeaders.contentTypeHeader: 'application/json',
@@ -29,7 +29,7 @@ class LibroService {
 
   @override
   Future<List<LibroModel>> getLibro() async {
-    String baseUrl = 'http://192.168.20.20:8081';
+    String baseUrl = 'http://192.168.10.27:8081';
     final List collection;
 
     var response = await http.get('$baseUrl/api/biblioteca/libro/listarLibros');
