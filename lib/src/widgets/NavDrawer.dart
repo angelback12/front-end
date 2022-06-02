@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../ui/acerca_page.dart';
 import '../ui/libro_page.dart';
 import '../ui/libro_select_page.dart';
-import '../ui/user_page.dart';
 import '../ui/user_select_page.dart';
 import '../ui/user_page.dart';
+import '../ui/autor_page.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
@@ -41,6 +41,22 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.create),
             title: Text('Libro Disponible'),
+            onTap: () => {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => LibroSelect()))
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.create),
+            title: Text('Autores'),
+            onTap: () => {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => AutorPage()))
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.create),
+            title: Text('Listado de Autores'),
             onTap: () => {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => LibroSelect()))
