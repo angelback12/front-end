@@ -11,11 +11,7 @@ class AutorModel {
   final String nation;
   final int numlib;
 
-  AutorModel({
-    required this.name,
-    required this.nation,
-    required this.numlib,
-  });
+  AutorModel({required this.name, required this.nation, required this.numlib});
 
   factory AutorModel.fromJson(Map<String, dynamic> parsedJson) {
     return AutorModel(
@@ -35,5 +31,5 @@ class AutorModel {
       {'name': name, 'nation': nation, 'numlib': numlib};
 
   Map<String, dynamic> toRegistry() =>
-      {'name': name, 'nation': nation, 'numlib': numlib};
+      {'name': name, 'description': nation, 'numlib': numlib};
 }
